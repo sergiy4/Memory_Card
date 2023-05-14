@@ -1,6 +1,6 @@
 # MEMORY-CARD
 
-Another task from one project.
+Another task from odin project.
 
 You need to make a simple game using React functional components.
 This is a good project for training the useState and useEffect hooks.
