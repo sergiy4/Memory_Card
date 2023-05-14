@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { useState,useEffect } from 'react';
+import Cards from './components/Cards';
+import Header from './components/Header';
+import StartScreen from './components/StartScreen';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  const [currentScore,setCurrentScore] = useState(0)
+  const [bestScore,setBestScore] = useState(0)
+  const [startScreen,setStartScreen] = useState(true)
+  
+  const increaseCurrentScore = () =>{
+    setCurrentScore(prevScore => prevScore+1)
+  }
+
+  const increaseBeastScore = () =>{
+    setBestScore(prevScore => prevScore+1)
+  }
+
+  const resetCurrentScore = () =>{
+    setCurrentScore(0)
+  }
+
+  if(startScreen){
+    return(
+      <StartScreen startBtn={()=>{setStartScreen(false)}}></StartScreen>
+    )
+  }else{
+    return(
+      <div className='screen'>
+      <Header currentScore={currentScore} bestScore={bestScore}></Header>
+    
+      <Cards increaseScore={increaseCurrentScore}
+      increaseBeastScore={increaseBeastScore}
+      resetCurrentScore={resetCurrentScore}
+      bestScore={bestScore}
+      currentScore={currentScore} ></Cards>
     </div>
-  );
+    )
+    
+  }
+  // return (
+  //   {if(startScreen){
+      
+  //   }
+  //   else{
+  //     return(
+
+  //     )
+  //   }}
+   
+  
+  // );
 }
 
 export default App;
