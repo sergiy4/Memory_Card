@@ -7,7 +7,7 @@ function StartScreen(props){
     return(
         <>
             <header className="Start_header">
-                <h1 className='header'>Memory Game</h1>
+                <h1 className='header'>Memory Card</h1>
             </header>
             <main className="rules">
                 <div className='rules_block'>

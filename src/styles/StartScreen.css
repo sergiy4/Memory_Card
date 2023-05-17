@@ -18,6 +18,7 @@
     
     color: #fff;
     font-family: 'Montserrat', sans-serif;
+   /* overflow: hidden; */
 }
 .rules_block{
     height: 50%;
@@ -38,6 +39,7 @@
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
+    letter-spacing: 4px;
 }
 .rule_h2{
    
@@ -48,3 +50,26 @@
 
 }
 
+@media screen and (max-width: 900px){
+    .Start_header{
+        padding: 40px;
+        font-size: 15px;
+        height: 10%;
+       
+    }
+    .rules{
+  
+        font-size: 15px;
+    
+    }
+    .rules_block{
+        height: 50%;
+        width: 70%;
+       
+    }
+    .start_btn{
+    
+        letter-spacing: 4px;
+    }
+
+}

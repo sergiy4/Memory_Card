@@ -22,36 +22,66 @@ function App() {
     setCurrentScore(0)
   }
 
-  if(startScreen){
-    return(
-      <StartScreen startBtn={()=>{setStartScreen(false)}}></StartScreen>
-    )
-  }else{
-    return(
-      <div className='screen'>
-      <Header currentScore={currentScore} bestScore={bestScore}></Header>
+  const levelOne = () =>{
+    const levelScreen = document.getElementById('over')
+    const allScreenStart = document.querySelector('.all_start_screen')
+
+    levelScreen.className='overWindow'
+    const h1 = document.createElement('h1')
+    h1.innerText='Start Game'
+    h1.className = 'level_one'
     
-      <Cards increaseScore={increaseCurrentScore}
-      increaseBeastScore={increaseBeastScore}
-      resetCurrentScore={resetCurrentScore}
-      bestScore={bestScore}
-      currentScore={currentScore} ></Cards>
-    </div>
-    )
+    setTimeout(()=>{
+      allScreenStart.appendChild(h1)
+     
+    },750)
+
+    setTimeout(()=>{
+      allScreenStart.removeChild(h1)
+      setStartScreen(false)
+    },1700)
+
+    setTimeout(()=>{
+      levelScreen.classList.remove('overWindow')
+    },2600)
+
     
   }
-  // return (
-  //   {if(startScreen){
-      
-  //   }
-  //   else{
-  //     return(
 
-  //     )
-  //   }}
+
+  return(
+    <>
+    <div className='all_start_screen'>
+      <div id='over'>
+       
+      </div>
+      {startScreen && (
+     
+      
+        <StartScreen startBtn={()=>{levelOne()}}></StartScreen>
+     
+      
+     
+      )}
+      {!startScreen && (
+       <div className='screen'>
+       <Header currentScore={currentScore} bestScore={bestScore}></Header>
+     
+       <Cards increaseScore={increaseCurrentScore}
+       increaseBeastScore={increaseBeastScore}
+       resetCurrentScore={resetCurrentScore}
    
+       currentScore={currentScore} 
+       bestScore={bestScore}></Cards>
+       
+       </div>
+     )}
+    </div>
+     
+    </>
+  )
   
-  // );
+
 }
 
 export default App;

@@ -3,17 +3,17 @@
   --pink:rgb(221, 21, 118);
   --teal:rgb(29, 176, 225);
   --yellow:rgb(255, 217, 0);
-  /* rgb(255, 217, 0); */
+
   --gray:rgb(48, 47, 48);
 }
 .screen{
 
   height: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   
- 
 }
 .card{
   height: 280px;
@@ -43,10 +43,10 @@
   gap: 25px;
   flex-wrap:wrap;
   flex: 1;
-  /* padding: 20px; */
+
   position: relative;
  
-  /* background-color: bisque; */
+
 }
 .game_header{
   rotate: -90deg;
@@ -74,5 +74,255 @@
   /* align-items: center;
   justify-content:; */
   height: 50%;
+
+}
+
+/* animation */
+
+.overWindow{
+  background-color: rgb(255, 255, 255);
+  
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  /* position: relative; */
+  top:70%;
+  left:50%;
+  transform: translate(-50%);
+  z-index: 3;
+  animation: overWindow 2.7s forwards ease-in;
+  
+}
+.level_one{
+  /* height: 200px;
+  width: 200px; */
+
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%);
+
+  font-family: 'Montserrat', sans-serif;
+  z-index: 4;
+  color: #000000;
+  letter-spacing: 3px;
+}
+.all_start_screen{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+@keyframes overWindow{
+ 0%{
+    height: 100px;
+    width: 100px;
+  }
+  70%{
+    top:-20%;
+    left: 10;
+    height:600%;
+    width: 300%;
+    border-radius: 50%;
+  }
+  100%{
+    top:100%;
+    height: 0;
+    width: 0;
+    display: none;
+  }
+}
+
+/* lose modal */
+
+.loseModal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 70%;
+  width: 70%;
+  background-color: aliceblue;
+  
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 4px;
+}
+
+.restartBtn{
+  height: 50px;
+  width: 150px;
+  border:none;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 3px;
+  background-color: black;
+  color:#fff;
+  cursor:pointer;
+}
+.buttonDiv{
+  display: flex;
+  gap: 40px;
+}
+
+@media screen and (max-width: 1400px) {
+  .screen{
+
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .game_header{
+    rotate: 0deg;
+    color: #fff;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%;
+    height: 15%; 
+    font-family: 'Montserrat', sans-serif;
+    /* margin-bottom: 20px; */
+
+
+    
+  }
+  .card{
+    height: 210px;
+    width: 150px;
+    color: white;
+    background-color:var(--gray) ;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    
+    
+  }
+  .cards{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    align-content: center;
+    gap: 10px;
+    flex-wrap:wrap;
+    position: relative;
+   
+  
+  }
+  .Text_memory{
+    width: 20%;
+    font-size: 20px;
+    font-weight:400;
+
+  }
+  .Score{
+    rotate: 0deg;
+    display: flex;
+    flex-direction: column;
+    
+    /* align-items: center;
+    justify-content:; */
+    height: 50%;
+  }
+
+  .overWindow{
+    background-color: rgb(255, 255, 255);
+  
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    /* position: relative; */
+    top:70%;
+    left:50%;
+    transform: translate(-50%);
+    z-index: 3;
+    animation: overWindow 2.6s forwards ease-in;
+  }
+  @keyframes overWindow{
+    0%{
+       height: 100px;
+       width: 100px;
+     }
+     70%{
+       top:-20%;
+       left: 10;
+       height:400%;
+       width: 400%;
+       border-radius: 50%;
+     }
+     100%{
+      top:100%;
+      left: 10;
+      height: 0;
+      width: 0;
+      display: none;
+     }
+  }
+   
+
+  .level_one{
+
+  
+   display: none;
+  
+
+  }
+
+  .loseModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 10px;
+    height: 70%;
+    width: 70%;
+    background-color: aliceblue;
+    
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+  }
+  .restartBtn{
+    height: 40px;
+    width: 100px;
+    font-size: 10px;
+    border:none;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    background-color: black;
+    color:#fff;
+    cursor:pointer;
+  }
+  .buttonDiv{
+    display: flex;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  @keyframes overWindow{
+    0%{
+       height: 100px;
+       width: 100px;
+     }
+     70%{
+       top:-20%;
+       left: 10;
+       height:200%;
+       width: 400%;
+       border-radius: 50%;
+     }
+     100%{
+      top:100%;
+      left: 10;
+      height: 0;
+      width: 0;
+      display: none;
+    }
+  }
 
 }

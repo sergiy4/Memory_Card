@@ -10,23 +10,29 @@ function Cards (props){
     const [cards,setCards] = useState([])
     const [level,setLevel] = useState(0)
     const [loss,setLoss] = useState(false)
+    const [victory,setVictory] = useState(false)
+    const [nextLevel,setNextLevel] = useState(true)
+
 
     useEffect(()=>{
 
         setData()
         
-    },[loss])
+    },[victory,loss,level])
 
-    useEffect(()=>{
-        setData()
+    // useEffect(()=>{
+      
+    //     setData()
 
-    },[level])
+    // },[level])
 
     const  setData = () =>{
 
         let namesArr = ["Dipper","Mabel","Wendy","Stanley","Pig","Soos","Deputy","Pacifica","Bill"]
         let newArr = []
         // межі масива
+
+        level+5 > namesArr.length?setNextLevel(false):setNextLevel(true)
 
         if(level+4 <= namesArr.length){
             for(let i = 0; i< level+4; i++){
@@ -37,16 +43,10 @@ function Cards (props){
                     name:namesArr[i]
                 })
             }
-        }else{
-            for(let i = 0; i< namesArr.length; i++){
-            
-                newArr.push({
-                    id:uniqid(),
-                    elect:false,
-                    name:namesArr[i]
-                })
-            }
         }
+        
+        
+
         
        setCards(newArr)
     }
@@ -65,11 +65,11 @@ function Cards (props){
     const lost = () =>{
        
         setLevel(0)
-        setLoss(!loss)
+        setLoss(true)
         
         // reset Score
         resetCurrentScore()
-        // Запускає анімацію програшу
+        
 
     }
 
@@ -92,8 +92,6 @@ function Cards (props){
         // shuffle array
         newArr = shuffle(newArr)
 
-        // setCards(newArr)
-
         // increment current Score
         increaseScore()  
 
@@ -102,14 +100,17 @@ function Cards (props){
             increaseBeastScore()
         }
 
-
         // check win
         if(checkWin(newArr)){
             // next level
-            setLevel(prevLevel => prevLevel+1)
-           
-        }
+            // nextLevel(level+2)
+            setVictory(true)
 
+            // setTimeout(()=>{setLevel(prevLevel => prevLevel+1)},1500)
+           
+            
+        }
+        
         // setCard
         setCards(newArr)
     }
@@ -117,14 +118,47 @@ function Cards (props){
     return(
         
         <main className="cards">
-        
-        {cards.map(item => {
+        {loss && (
+            <div className="loseModal">
+                <h1>You lost</h1>
+                <button className="restartBtn" onClick={()=>{setLoss(false) 
+                        setLevel(0)}}>Restart</button>
+            </div>
+        )}
+        {victory && (
+
+          <div className="loseModal">
+             <h1>You win level :{level +1}</h1>
+             
+             <div className="buttonDiv">
+             <button className="restartBtn" onClick={()=>{
+                    setVictory(false)
+                    // setLoss(true)
+                    setLevel(0)
+                    }}>Restart</button>
+
+                {nextLevel && (
+                    <button className="restartBtn" onClick={()=>{
+                        setLevel(prevLevel => prevLevel+1) 
+                        setVictory(false)
+                        }
+                    }>Next level</button>
+                )}
+             
+            </div>
+          </div>
+        )}
+        {!victory && !loss && (
+            cards.map(item => {
            
-            return(
-                
-                <Card key={item.id} oneCard={item} ClickCard = {chooseCard} ></Card>
-            )
-        })}
+                return(
+                    
+                    <Card key={item.id} oneCard={item} ClickCard = {chooseCard} ></Card>
+                )
+            })
+        )}
+       
+        
    
         </main>
       
