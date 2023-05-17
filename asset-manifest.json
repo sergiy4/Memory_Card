@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/memory_card/static/css/main.f187b809.css",
+    "main.js": "/memory_card/static/js/main.43f9ab9d.js",
+    "static/media/Mabel.jpg": "/memory_card/static/media/Mabel.1ed15bf364d4fd73e99a.jpg",
+    "static/media/Pacifica.jpg": "/memory_card/static/media/Pacifica.6387acfa25bcd06c9313.jpg",
+    "static/media/Dipper.jpg": "/memory_card/static/media/Dipper.ae5bdb83b92cb228dbee.jpg",
+    "static/media/Wendy.jpg": "/memory_card/static/media/Wendy.4652950c6883f6dffcb5.jpg",
+    "static/media/Bill.jpg": "/memory_card/static/media/Bill.711aae5a7030be7fd324.jpg",
+    "static/media/Pig.jpg": "/memory_card/static/media/Pig.f4227158094a6344e0f9.jpg",
+    "static/media/Deputy.jpg": "/memory_card/static/media/Deputy.abfaae7dceff34a339c7.jpg",
+    "static/media/Soos.jpg": "/memory_card/static/media/Soos.0d32cd7b624b41bbc916.jpg",
+    "static/media/Stanley.jpg": "/memory_card/static/media/Stanley.c8d84a6b0e670d7056ca.jpg",
+    "index.html": "/memory_card/index.html",
+    "main.f187b809.css.map": "/memory_card/static/css/main.f187b809.css.map",
+    "main.43f9ab9d.js.map": "/memory_card/static/js/main.43f9ab9d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f187b809.css",
+    "static/js/main.43f9ab9d.js"
+  ]
+}
