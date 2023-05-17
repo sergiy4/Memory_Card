@@ -25,7 +25,7 @@ function App() {
   const levelOne = () =>{
     const levelScreen = document.getElementById('over')
     const allScreenStart = document.querySelector('.all_start_screen')
-
+    allScreenStart.classList.add('hidden')
     levelScreen.className='overWindow'
     const h1 = document.createElement('h1')
     h1.innerText='Start Game'
@@ -43,6 +43,8 @@ function App() {
 
     setTimeout(()=>{
       levelScreen.classList.remove('overWindow')
+      allScreenStart.classList.remove('hidden')
+      levelScreen.style.display='none'
     },2600)
 
     

@@ -112,6 +112,9 @@
   height: 100%;
   width: 100%;
   position: relative;
+
+}
+.hidden{
   overflow: hidden;
 }
 @keyframes overWindow{
@@ -167,8 +170,10 @@
 @media screen and (max-width: 1400px) {
   .screen{
 
-    height: 100%;
-    position: relative;
+    /* height: auto; */
+    /* min-height: 100%; */
+    /* position: relative; */
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -176,13 +181,14 @@
     
   }
   .game_header{
+    padding: 25px;
     rotate: 0deg;
     color: #fff;
     display: flex;
     justify-content:space-around;
     align-items: center;
     width: 100%;
-    height: 15%; 
+    height: 20%; 
     font-family: 'Montserrat', sans-serif;
     /* margin-bottom: 20px; */
 
@@ -190,6 +196,7 @@
     
   }
   .card{
+    flex: 1;
     height: 210px;
     width: 150px;
     color: white;
@@ -202,15 +209,15 @@
   }
   .cards{
     width: 100%;
-    height: 90%;
+    height:80%;
     display: flex;
     align-items:center;
     justify-content:center;
     align-content: center;
     gap: 10px;
     flex-wrap:wrap;
-    position: relative;
-   
+    /* position: relative; */
+   /* overflow: hidden; */
   
   }
   .Text_memory{
@@ -279,7 +286,8 @@
     align-items: center;
     justify-content: space-around;
     font-size: 10px;
-    height: 70%;
+   
+    height: 20rem;
     width: 70%;
     background-color: aliceblue;
     
