@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Memory_Card/static/css/main.c68b05f8.css",
-    "main.js": "/Memory_Card/static/js/main.4cf3a386.js",
+    "main.js": "/Memory_Card/static/js/main.a9a3da4c.js",
     "static/media/Mabel.jpg": "/Memory_Card/static/media/Mabel.1ed15bf364d4fd73e99a.jpg",
     "static/media/Pacifica.jpg": "/Memory_Card/static/media/Pacifica.6387acfa25bcd06c9313.jpg",
     "static/media/Dipper.jpg": "/Memory_Card/static/media/Dipper.ae5bdb83b92cb228dbee.jpg",
@@ -13,10 +13,10 @@
     "static/media/Stanley.jpg": "/Memory_Card/static/media/Stanley.c8d84a6b0e670d7056ca.jpg",
     "index.html": "/Memory_Card/index.html",
     "main.c68b05f8.css.map": "/Memory_Card/static/css/main.c68b05f8.css.map",
-    "main.4cf3a386.js.map": "/Memory_Card/static/js/main.4cf3a386.js.map"
+    "main.a9a3da4c.js.map": "/Memory_Card/static/js/main.a9a3da4c.js.map"
   },
   "entrypoints": [
     "static/css/main.c68b05f8.css",
-    "static/js/main.4cf3a386.js"
+    "static/js/main.a9a3da4c.js"
   ]
 }
