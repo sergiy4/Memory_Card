@@ -26,13 +26,16 @@ function Cards (props){
         let newArr = []
         // межі масива
 
+        namesArr = shuffle(namesArr)
+        
         if(level+5 > namesArr.length){
             setNextLevel(false)
         }
 
         if(level+4 <= namesArr.length){
             for(let i = 0; i< level+4; i++){
-            
+                
+                
                 newArr.push({
                     id:uniqid(),
                     elect:false,
@@ -41,8 +44,8 @@ function Cards (props){
             }
         }
         
-        newArr = shuffle(newArr)
-
+      
+        // newArr = shuffle(newArr)
         
        setCards(newArr)
     }
