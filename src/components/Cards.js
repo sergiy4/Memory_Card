@@ -20,19 +20,15 @@ function Cards (props){
         
     },[victory,loss,level])
 
-    // useEffect(()=>{
-      
-    //     setData()
-
-    // },[level])
-
     const  setData = () =>{
 
         let namesArr = ["Dipper","Mabel","Wendy","Stanley","Pig","Soos","Deputy","Pacifica","Bill"]
         let newArr = []
         // межі масива
 
-        level+5 > namesArr.length?setNextLevel(false):setNextLevel(true)
+        if(level+5 > namesArr.length){
+            setNextLevel(false)
+        }
 
         if(level+4 <= namesArr.length){
             for(let i = 0; i< level+4; i++){
@@ -45,7 +41,7 @@ function Cards (props){
             }
         }
         
-        
+        newArr = shuffle(newArr)
 
         
        setCards(newArr)
@@ -103,12 +99,9 @@ function Cards (props){
         // check win
         if(checkWin(newArr)){
             // next level
-            // nextLevel(level+2)
-            setVictory(true)
-
-            // setTimeout(()=>{setLevel(prevLevel => prevLevel+1)},1500)
            
-            
+            setVictory(true)
+        
         }
         
         // setCard
@@ -133,8 +126,12 @@ function Cards (props){
              <div className="buttonDiv">
              <button className="restartBtn" onClick={()=>{
                     setVictory(false)
-                    // setLoss(true)
+
                     setLevel(0)
+
+                    if(!nextLevel){
+                        resetCurrentScore()
+                    }
                     }}>Restart</button>
 
                 {nextLevel && (
